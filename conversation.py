@@ -20,12 +20,6 @@ class Conversation(object):
 					"have food poisoning. Please avoid caffeine and make sure to remain properly hydrated. " +
 					"If your symptoms become any worse, please visit an emergency room.",
 			},
-			'arabic': {
-				'greeting': (
-"""إذا كان هذا هو حالة الطوارئ يرجى الاتصال 999. مرحبا، وهذا هو الدكتور فاطمة. أنا خدمة الآلي،
-وأود أن أقدم المساعدة مع الأعراض الطبية الخاصة بك. كيف بإمكاني مساعدتك؟"""
-				),
-			},
 		}
 		self.disease_symptoms = set(['nausea', 'headache', 'diarrhea', 'fever', 'loss of appetite'])
 		self.keywords = self.disease_symptoms.copy()
@@ -45,11 +39,8 @@ class Conversation(object):
 	def respond(self, message):
 		keywords = self.getKeywords(message)
 		if self.stage == 'greeting':
-			response = []
-			for language in ('english', 'arabic'):
-				response.append((self.responses[language]['greeting'], language))
+			response = self.responses[self.language]['greeting']
 			self.stage = 'symptom_check'
-			return response
 
 		elif self.stage == 'symptom_check':
 			new_symptoms = set()
@@ -77,7 +68,7 @@ class Conversation(object):
 			symptoms = "{}, and {}".format(', '.join(experienced_symptoms[:-1]), experienced_symptoms[-1])
 			response = response.format(symptoms, self.time_since_symptoms)
 
-		return [(response, self.language)]
+		return (response, self.language)
 
 	def getKeywords(self, message):
 		keywords = set()
