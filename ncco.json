@@ -1,0 +1,18 @@
+[
+  {
+    "action": "talk",
+    "text": "Please wait while we connect you"
+  },
+  {
+    "action": "connect",
+    "eventUrl": [
+      "http://nyuadhack2017.ngrok.io/"
+    ],
+    "from": "12028525511",
+    "endpoint": [{
+      "type": "websocket",
+      "uri": "ws://nyuadhack2017.ngrok.io/socket",
+      "content-type": "audio/l16;rate=16000"
+    }]
+  }
+]
