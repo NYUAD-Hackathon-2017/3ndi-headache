@@ -44,7 +44,6 @@ class Conversation(object):
 
 	def respond(self, message):
 		keywords = self.getKeywords(message)
-		print(keywords)
 		if self.stage == 'greeting':
 			response = []
 			for language in ('english', 'arabic'):
@@ -61,7 +60,6 @@ class Conversation(object):
 					new_symptoms.add(symptom)
 			self.symptoms_to_check -= new_symptoms
 			self.experienced_symptoms.update(new_symptoms)
-			print(self.symptoms_to_check)
 			if len(self.symptoms_to_check) > 0:
 				next_symptom = random.choice(list(self.symptoms_to_check))
 				response = random.choice(self.responses[self.language]['symptom_check'])
