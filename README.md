@@ -2,7 +2,7 @@
 Project for the NYUAD Hackathon for the Social Good 2017
 
 # Team
-## Students
+*Students*
 * Moiri Gamboni, NYUAD, Australia
 * Khalid Abul Borghol, AUS, UAE
 * Chenhao Xu, NYUAD, UAE 
@@ -11,7 +11,7 @@ Project for the NYUAD Hackathon for the Social Good 2017
 * Eithar Al Fatih, University of Khartoum, Sudan 
 * Munachiso Nwadike, NYUAD, Nigeria
 
-## Mentors
+*Mentors*
 * Lingliang Zhang, NYU Abu Dhabi, UK
 * Varun Arora, CEO, OpenCurriculum, USA 
 * Razan Qraini, Senior Android Developer, ًWebTeb, Palestine
