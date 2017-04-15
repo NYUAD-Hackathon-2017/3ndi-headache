@@ -3,7 +3,7 @@ Project for the NYUAD Hackathon for the Social Good 2017
 
 # Team
 ## Students
-* Moiri Gamboni, moiri.gamboni@nyu.edu, NYUAD, Australia
+* Moiri Gamboni, NYUAD, Australia
 * Khalid Abul Borghol, AUS, UAE
 * Chenhao Xu, NYUAD, UAE 
 * Daniel Watson, NYUAD, UAE
