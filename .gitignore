@@ -1,6 +1,7 @@
 # App
 private.key
 secrets.py
+*.pyc
 
 # macOS
 .DS_Store

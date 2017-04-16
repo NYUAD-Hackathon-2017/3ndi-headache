@@ -10,6 +10,7 @@ import time
 import uuid
 
 import numpy as np
+import soundfile as sf
 
 import tornado.httpserver
 import tornado.websocket
@@ -25,7 +26,7 @@ import secrets
 
 # Threshold parameters
 
-SILENCE_FRAME_THRESHOLD = 12000
+SILENCE_FRAME_THRESHOLD = 20000
 SILENCE_AVR_THRESHOLD = 50
 OVERALL_THRESHOLD = 100
 
@@ -114,12 +115,8 @@ def text_to_speech(text, language='english'):
 ### Web application                                                         ###
 ###############################################################################
 
-PLAY_TTS_URL = "https://api.nexmo.com/v1/calls/{}/stream"
-conversation_uuid = None
-payload = {
-  'stream_url': ['http://nyuadhack2017.ngrok.io/static/test.wav']
-}
 
+counter = 0
 
 class WSHandler(tornado.websocket.WebSocketHandler):
   """Handler for the phone call web socket."""
@@ -133,6 +130,14 @@ class WSHandler(tornado.websocket.WebSocketHandler):
     self.connections.append(self)
   
   def on_message(self, message):
+    global counter
+    if counter == 0:
+      speech_response, _ = sf.read('static/{}.wav'.format(counter))
+      speech_response = (speech_response * 36000).astype('<i2').tostring()
+      counter += 1
+      for i in xrange(0, len(speech_response), 640):
+        self.write_message(speech_response[i:i+640], binary=True)
+        time.sleep(320/16000)
     # Check if message is binary or text
     if type(message) == str:
       # Read little-endian encoded sound
@@ -144,17 +149,22 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         recording = chunks.tostring()
         ### TODO: add support for Arabic if there is time
         print("Sending STT request")
-        text_input = speech_to_text(recording, languages=['english'])[0]
-        print(text_input)
+        #text_input = speech_to_text(recording, languages=['english'])[0]
+        #print(text_input)
         
-        ### TODO: all the NLP here
-        text_response = text_input
+        #text_response = text_input
+        speech_response, _ = sf.read('static/{}.wav'.format(counter))
+        speech_response = (speech_response * 36000).astype('<i2').tostring()
+        counter += 1
         
-        print("Sending TTS request")
-        speech_response = text_to_speech(text_response, 'english')
+        #print("Sending TTS request")
+        #speech_response = text_to_speech(text_response, 'english')
         for i in xrange(0, len(speech_response), 640):
           self.write_message(speech_response[i:i+640], binary=True)
           time.sleep(320/16000)
+        
+        if counter == 9:
+          exit()
   
   def on_close(self):
     # Remove the connection from the list of connections
