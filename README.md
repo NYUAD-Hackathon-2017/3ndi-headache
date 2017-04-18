@@ -1,7 +1,7 @@
 # 3ndi-headache
 Project for the NYUAD Hackathon for the Social Good 2017
 
-Presentation Slides: https://docs.google.com/presentation/d/19r0_enY7IGZCaqpfy8v5mJVRHiShEEuZMuIpWVdm_UE/edit#slide=id.g21eefa387b_3_6
+Presentation Slides: http://bit.ly/2pcsHik
 
 # Team
 *Students*
