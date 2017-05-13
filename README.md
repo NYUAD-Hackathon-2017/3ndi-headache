@@ -2,7 +2,9 @@
 Project for the NYUAD Hackathon for the Social Good in the Arab World 2017 and 2nd place winner
 
 Description: Automating triage nurses.
-Presentation Slides: http://bit.ly/2pcsHik
+
+Presentation Slides: http://bit.ly/2pcsHik 
+
 Presentation demo: http://bit.ly/2qeqkef
 
 # Team
