@@ -1,7 +1,11 @@
-# 3ndi-headache
-Project for the NYUAD Hackathon for the Social Good 2017
+# 3ndi-headache (I Have Headache)
+Project for the NYUAD Hackathon for the Social Good in the Arab World 2017 and 2nd place winner
+
+*Description:*
+Automating triage nurses.
 
 Presentation Slides: http://bit.ly/2pcsHik
+Presentation demo: http://bit.ly/2qeqkef
 
 # Team
 *Students*
@@ -14,6 +18,8 @@ Presentation Slides: http://bit.ly/2pcsHik
 * Munachiso Nwadike, NYUAD, Nigeria
 
 *Mentors*
+* Razan Qraini, Senior Android Developer, ًWebTeb, Palestine
 * Lingliang Zhang, NYU Abu Dhabi, UK
 * Varun Arora, CEO, OpenCurriculum, USA 
-* Razan Qraini, Senior Android Developer, ًWebTeb, Palestine
+
+More info about the NYUAD Hackathon: http://sites.nyuad.nyu.edu/hackathon/
